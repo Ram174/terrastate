@@ -1,3 +1,12 @@
+terraform {
+  backend "azurerm"{
+    resource_group_name  = "Store"
+    storage_account_name = "terraformstatenw"
+    container_name       = "terrastate"
+    key                  = "terraform.tfstate"
+  }
+}
+
 resource "azurerm_resource_group" "Docker_tera" {
   name     = "docertera"
   location = var.location
